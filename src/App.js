@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navigature from './test/test';
+import Projects from './test/projects';
+import DuoNavigature from './test/second-navigate';
+import Section1 from './test/section1';
+import Section2 from './test/section2';
+import Contact from './test/contact';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div>
+            <Navigature/> <Projects/> <DuoNavigature/> <Section2/> <Section1/> <Contact/>
+        </div>
     );
   }
 }
