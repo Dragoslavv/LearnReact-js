@@ -3,10 +3,10 @@ import React from 'react';
 class Section2 extends React.Component {
     render() {
 
-        var idCounter = 'About';
+        var idCounter = 'Services_slide';
 
         return (
-            <section className="bg-primary hide" id={idCounter}>
+            <section className="bg-primary hidden" id={idCounter}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 mx-auto text-left mb-5">

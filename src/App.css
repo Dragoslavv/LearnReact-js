@@ -81,6 +81,8 @@ section {
 
 .border-bottom-default {
   border-bottom: 5px solid #e50914; }
+.border-bottom-none {
+    border-bottom: none; }
 
 img::-moz-selection {
   color: #fff;
@@ -161,3 +163,7 @@ section.section1 {
 section.contact {
   background: #000;
   color: #fff;  }
+
+.hidden { display:none; }
+
+.shown { display:block; }

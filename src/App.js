@@ -5,6 +5,7 @@ import Projects from './test/projects';
 import DuoNavigature from './test/second-navigate';
 import Section1 from './test/section1';
 import Section2 from './test/section2';
+import Section3 from './test/section3';
 import Contact from './test/contact';
 
 
@@ -12,7 +13,7 @@ class App extends Component {
   render() {
     return (
         <div>
-            <Navigature/> <Projects/> <DuoNavigature/> <Section2/> <Section1/> <Contact/>
+            <Navigature/> <Projects/> <DuoNavigature/> <Section1/> <Section2/> <Section3/> <Contact/>
         </div>
     );
   }
