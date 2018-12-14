@@ -25,6 +25,8 @@ class DuoNavigature extends React.Component {
         elementAbout.classList.add('shown');
         elementServices.classList.add("hidden");
         elementPrices.classList.add("hidden");
+        elementServices.classList.remove("shown");
+        elementPrices.classList.remove("shown");
 
         //Added border on bottom if is select link
         nav1.parentElement.classList.add('border-bottom-default');

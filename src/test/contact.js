@@ -8,21 +8,57 @@ class Contact extends React.Component {
 
         return (
             <section className="contact" id={idCounter}>
-                <div className="container">
-                    <div className="row mb-4">
-                        <div className="col-lg-8 mx-auto text-center">
-                            <h2 className="section-heading">Questions? Contact us.</h2>
-                            <hr className="my-4"/>
+                <div className="container-fluid">
+
+                    <div className="row mb-5">
+                        <div className="col-lg-4 ml-auto text-center">
+                            <ul className='list-group'>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                            </ul>
+                        </div>
+                        <div className="col-lg-4 ml-auto text-center">
+                            <ul className='list-group'>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                            </ul>
+                        </div>
+                        <div className="col-lg-4 ml-auto text-center">
+                            <ul className='list-group'>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                                <li className='list-group-item'>Loprem ipsom dolar sit</li>
+                            </ul>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-lg-6 ml-auto text-center">
-                            <p>069/50-13-001</p>
+                    <div className="row no-gutters social-container">
+                        <div className="col">
+                            <a className="social-inner" href="#">
+                                <span className="icon mdi mdi-facebook"></span><span>Facebook</span>
+                            </a>
                         </div>
-                        <div className="col-lg-6 mr-auto text-center">
-                            <p>
-                                <a href="mailto:gagi.predojevic93@hotmail.com">gagi.predojevic93@hotmail.com</a>
-                            </p>
+                        <div className="col">
+                            <a className="social-inner" href="#">
+                                <span className="icon mdi mdi-instagram"></span><span>instagram</span>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a className="social-inner" href="#">
+                                <span className="icon mdi mdi-twitter"></span><span>twitter</span>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a className="social-inner" href="#">
+                                <span className="icon mdi mdi-youtube-play"></span><span>google</span>
+                            </a>
                         </div>
                     </div>
                 </div>
