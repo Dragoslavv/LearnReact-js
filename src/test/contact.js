@@ -1,5 +1,5 @@
 import React from 'react';
-
+import 'font-awesome/css/font-awesome.min.css';
 
 class Contact extends React.Component {
     render() {
@@ -9,7 +9,6 @@ class Contact extends React.Component {
         return (
             <section className="contact" id={idCounter}>
                 <div className="container-fluid">
-
                     <div className="row mb-5">
                         <div className="col-lg-4 ml-auto text-center">
                             <ul className='list-group'>
@@ -42,22 +41,22 @@ class Contact extends React.Component {
                     <div className="row no-gutters social-container">
                         <div className="col">
                             <a className="social-inner" href="#">
-                                <span className="icon mdi mdi-facebook"></span><span>Facebook</span>
+                                <i className="fa fa-facebook"></i><span className='float-right'>Facebook</span>
                             </a>
                         </div>
                         <div className="col">
                             <a className="social-inner" href="#">
-                                <span className="icon mdi mdi-instagram"></span><span>instagram</span>
+                                <i className="fa fa-instagram"></i><span>instagram</span>
                             </a>
                         </div>
                         <div className="col">
                             <a className="social-inner" href="#">
-                                <span className="icon mdi mdi-twitter"></span><span>twitter</span>
+                                <i className="fa fa-twitter"></i><span>twitter</span>
                             </a>
                         </div>
                         <div className="col">
                             <a className="social-inner" href="#">
-                                <span className="icon mdi mdi-youtube-play"></span><span>google</span>
+                                <i className="fa fa-google"></i><span>google</span>
                             </a>
                         </div>
                     </div>
