@@ -5,6 +5,7 @@ class DuoNavigature extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.handleClickAbout = this.handleClickAbout.bind(this);
         this.handleClickServices = this.handleClickServices.bind(this);
         this.handleClickContact = this.handleClickContact.bind(this);
