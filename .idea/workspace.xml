@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d190efd-cb26-4d4d-83fd-718ec003ed9f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/projects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test.js" afterDir="false" />
-    </list>
+    <list default="true" id="1d190efd-cb26-4d4d-83fd-718ec003ed9f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,12 +209,12 @@
       <workItem from="1544777810478" duration="19803000" />
       <workItem from="1545038211946" duration="19790000" />
       <workItem from="1545124207511" duration="5522000" />
-      <workItem from="1545209592103" duration="1331000" />
+      <workItem from="1545209592103" duration="1526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66837000" />
+    <option name="totallyTimeSpent" value="67032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
