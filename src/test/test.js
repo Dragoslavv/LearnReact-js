@@ -45,6 +45,10 @@ class Navigature extends React.Component {
                         <li className="nav-item active">
                             <a className="nav-link" href="#Services">About me <span className="sr-only">(current)</span></a>
                         </li>
+                        <span className='backslash'>|</span>
+                        <li className="nav-item ">
+                            <a className="nav-link" href="#Contact">Contact </a>
+                        </li>
                     </ul>
                     <div className="form-inline my-2 my-lg-0">
                         <button className="btn btn-outline-danger my-2 my-sm-0" id={backLoginButton} type='submit' onClick={this.renderRedirect}>Login</button>
