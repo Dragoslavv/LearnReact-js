@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import '../login.css';
+import Request from 'superagent';
 
 class Login extends Component {
     constructor(props){
@@ -8,11 +9,25 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
+            isLoggedIn: false,
+            users: []
         };
 
         this.validateForm = this.validateForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentWillMount() {
+        var url = 'http://127.0.0.1:8000/api/login/';
+        Request.post(url).then((response) => {
+            this.setState({
+                muvies: response
+            })
+            console.log(            this.setState({
+                muvies: response
+            }));
+        });
     }
 
     validateForm() {
