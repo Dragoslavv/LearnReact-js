@@ -20,13 +20,15 @@ class AuthController extends Controller
 
         if ($validator->fails())
         {
-            return response(['errors'=>$validator->errors()->all()], 422);
+            return response(['errors'=>$validator->errors()->all()], 404);
         }
 
         $user = User::create($request->toArray());
 
+
         $token = $user->createToken('Laravel Password Grant Client')->accessToken;
         $response = ['token' => $token];
+
 
         return response($response, 200);
 
@@ -44,7 +46,7 @@ class AuthController extends Controller
 
         } else {
             $response = 'User does not exist';
-            return response($response, 422);
+            return response($response, 404);
         }
 
     }
