@@ -19,15 +19,16 @@ class Login extends Component {
     }
 
     componentWillMount() {
-        var url = 'http://127.0.0.1:8000/api/login/';
-        Request.post(url).then((response) => {
-            this.setState({
-                muvies: response
-            })
-            console.log(            this.setState({
-                muvies: response
-            }));
-        });
+        Request
+            .post('http://127.0.0.1:8000/api/login?email=d4d02@gmail.com&password=123456')
+            .end(function(err, res){
+                if (res) {
+                    console.log('yay got ' + err  );
+                } else {
+                    console.log('Oh no! error ' + err );
+                }
+            });
+
     }
 
     validateForm() {
