@@ -5,13 +5,32 @@ class Navigature extends React.Component {
         super(props);
         this.renderRedirect = this.renderRedirect.bind(this);
         this.closeForm = this.closeForm.bind(this);
+        this.renderRedirectRegister = this.renderRedirectRegister.bind(this);
+        this.closeFormRegister = this.closeFormRegister.bind(this);
 
     }
 
+    renderRedirectRegister(){
+        const registerScroll = document.getElementById('Register');
+        const backRegisterButton = document.getElementById('backRegisterButton');
+        const closeButtonRegister = document.getElementById('closeButtonRegister');
+        registerScroll.classList.remove('hidden');
+        backRegisterButton.classList.add('hidden');
+        closeButtonRegister.classList.remove('hidden');
+    }
+    closeFormRegister(){
+        const registerScroll = document.getElementById('Register');
+        const backRegisterButton = document.getElementById('backRegisterButton');
+        const closeButtonRegister = document.getElementById('closeButtonRegister');
+        registerScroll.classList.add('hidden');
+        backRegisterButton.classList.remove('hidden');
+        closeButtonRegister.classList.add('hidden');
+    }
+
     renderRedirect() {
-        const loginScroll = document.getElementById('Login');
-        const backLoginButton = document.getElementById('backLoginButton');
-        const closeButton = document.getElementById('closeButton');
+        const loginScroll = document.getElementById('Register');
+        const backLoginButton = document.getElementById('backRegisterButton');
+        const closeButton = document.getElementById('closeButtonRegister');
         loginScroll.classList.remove('hidden');
         backLoginButton.classList.add('hidden');
         closeButton.classList.remove('hidden');
@@ -30,7 +49,9 @@ class Navigature extends React.Component {
     render() {
 
         var backLoginButton = 'backLoginButton',
-            closeButton     = 'closeButton'    ;
+            backRegisterButton = 'backRegisterButton',
+            closeButtonRegister     = 'closeButtonRegister',
+            closeButton     = 'closeButton';
 
 
         return (
@@ -52,7 +73,9 @@ class Navigature extends React.Component {
                     </ul>
                     <div className="form-inline my-2 my-lg-0">
                         <button className="btn btn-outline-danger my-2 my-sm-0" id={backLoginButton} type='submit' onClick={this.renderRedirect}>Login</button>
+                        <button className="btn btn-outline-danger my-2 my-sm-0" id={backRegisterButton} type='submit' onClick={this.renderRedirectRegister}>Register</button>
                         <button className="btn btn-outline-primary hidden my-2 my-sm-0" id={closeButton} type='submit' onClick={this.closeForm}>Close login form</button>
+                        <button className="btn btn-outline-primary hidden my-2 my-sm-0" id={closeButtonRegister} type='submit' onClick={this.closeFormRegister}>Close register form</button>
 
                     </div>
                 </div>

@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import '../login.css';
 
-class Login extends Component {
+class Register extends Component {
     constructor(props){
         super(props);
         this.state = {
-            email: 'd4d02@gmail.com',
-            password: '123456'
+            name: 'test',
+            email: 'tesawdsst@gmail.com',
+            password: '123dwadad456',
+            password_confirmation: '123dwadad456'
         };
 
         this.validateForm = this.validateForm.bind(this);
@@ -19,7 +21,7 @@ class Login extends Component {
 
     componentWillMount() {
 
-        fetch('http://127.0.0.1:8000/api/login?email=' + this.state.email + '&password=' + this.state.password, {
+        fetch('http://127.0.0.1:8000/api/register?name=' + this.state.name + '&email=' + this.state.email + '&password=' + this.state.password + '&password_confirmation=' + this.state.password_confirmation , {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -29,7 +31,7 @@ class Login extends Component {
             if(response.status >= 200 && response.status < 300){
                 console.log(response.json());
             } else {
-                return 'test';
+                return 'Api is not function';
             }
         }).catch(error => {
             console.log('request failed', error);
@@ -37,13 +39,13 @@ class Login extends Component {
     }
 
     validateForm() {
-        return this.state.email.length > 0 && this.state.email.value !== '' && this.state.password.value !== '' && this.state.password.length > 0;
+        return this.state.name.length > 0 && this.state.name.value !== '' &&  this.state.email.length > 0 && this.state.email.value !== '' && this.state.password.value !== '' && this.state.password.length > 0 && this.state.password_confirmation.value !== '' && this.state.password_confirmation.length > 0;
     }
 
     handleChange = e => {
-      this.setState({
-         [e.target.id]: e.target.value
-      });
+        this.setState({
+            [e.target.id]: e.target.value
+        });
     };
 
     handleSubmit = e => {
@@ -53,7 +55,7 @@ class Login extends Component {
 
     render() {
 
-        var idCounter = 'Login';
+        var idCounter = 'Register';
 
         return (
             <section className="bg-primary section1 hidden" id={idCounter}>
@@ -62,13 +64,22 @@ class Login extends Component {
                         <div className="row">
                             <div className="col-lg-10 mx-auto">
                                 <h1 className="text-uppercase text-center">
-                                    <strong>Login form</strong>
+                                    <strong>Register form</strong>
                                 </h1>
                                 <hr/>
                             </div>
                         </div>
                     </div>
                     <form onSubmit={this.handleSubmit}>
+                        <FormGroup controlId="name" bsSize="large">
+                            <ControlLabel>Name</ControlLabel>
+                            <FormControl
+                                autoFocus
+                                type="text"
+                                value={this.state.name}
+                                onChange={this.handleChange}
+                            />
+                        </FormGroup>
                         <FormGroup controlId="email" bsSize="large">
                             <ControlLabel>Email</ControlLabel>
                             <FormControl
@@ -86,13 +97,21 @@ class Login extends Component {
                                 type="password"
                             />
                         </FormGroup>
+                        <FormGroup controlId="password_confirmation" bsSize="large">
+                            <ControlLabel>Password confirmation</ControlLabel>
+                            <FormControl
+                                value={this.state.password_confirmation}
+                                onChange={this.handleChange}
+                                type="password"
+                            />
+                        </FormGroup>
                         <Button
                             block
                             bsSize="large"
                             disabled={!this.validateForm()}
                             type="submit"
                         >
-                            Login
+                            Register
                         </Button>
                     </form>
                 </div>
@@ -101,4 +120,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default Register;
