@@ -7,8 +7,8 @@ class Register extends Component {
         super(props);
         this.state = {
             name: '',
-            email: '',
-            password: '',
+            email_register: '',
+            password_register: '',
             password_confirmation: ''
         };
 
@@ -19,7 +19,7 @@ class Register extends Component {
     }
 
     validateForm() {
-        return this.state.name.length > 0 && this.state.name.value !== '' &&  this.state.email.length > 0 && this.state.email.value !== '' && this.state.password.value !== '' && this.state.password.length > 0 && this.state.password_confirmation.value !== '' && this.state.password_confirmation.length > 0;
+        return this.state.name.length > 0 && this.state.name.value !== '' &&  this.state.email_register.length > 0 && this.state.email_register.value !== '' && this.state.password_register.value !== '' && this.state.password_register.length > 0 && this.state.password_confirmation.value !== '' && this.state.password_confirmation.length > 0;
     }
 
     handleChange = e => {
@@ -30,7 +30,7 @@ class Register extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        fetch('http://127.0.0.1:8000/api/register?name=' + this.state.name + '&email=' + this.state.email + '&password=' + this.state.password + '&password_confirmation=' + this.state.password_confirmation , {
+        fetch('http://127.0.0.1:8000/api/register?name=' + this.state.name + '&email=' + this.state.email_register + '&password=' + this.state.password_register + '&password_confirmation=' + this.state.password_confirmation , {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -75,7 +75,7 @@ class Register extends Component {
                                 onChange={this.handleChange}
                             />
                         </FormGroup>
-                        <FormGroup controlId="email" bsSize="large">
+                        <FormGroup controlId="email_register" bsSize="large">
                             <ControlLabel>Email</ControlLabel>
                             <FormControl
                                 autoFocus
@@ -84,7 +84,7 @@ class Register extends Component {
                                 onChange={this.handleChange}
                             />
                         </FormGroup>
-                        <FormGroup controlId="password" bsSize="large">
+                        <FormGroup controlId="password_register" bsSize="large">
                             <ControlLabel>Password</ControlLabel>
                             <FormControl
                                 value={this.state.password}
