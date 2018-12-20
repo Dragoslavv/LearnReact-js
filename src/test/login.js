@@ -6,34 +6,14 @@ class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            email: 'd4d02@gmail.com',
-            password: '123456'
+            email: '',
+            password: ''
         };
 
         this.validateForm = this.validateForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.componentWillMount = this.componentWillMount.bind(this);
 
-    }
-
-    componentWillMount() {
-
-        fetch('http://127.0.0.1:8000/api/login?email=' + this.state.email + '&password=' + this.state.password, {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-            }
-        }).then(response => {
-
-            if(response.status >= 200 && response.status < 300){
-                console.log(response.json());
-            } else {
-                return 'test';
-            }
-        }).catch(error => {
-            console.log('request failed', error);
-        });
     }
 
     validateForm() {
@@ -47,8 +27,24 @@ class Login extends Component {
     };
 
     handleSubmit = e => {
-        alert('A name was submitted: ' + this.state.email);
         e.preventDefault();
+
+            fetch('http://127.0.0.1:8000/api/login?email=' + this.state.email + '&password=' + this.state.password, {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                }
+            }).then(response => {
+
+                if(response.status >= 200 && response.status < 300){
+                    console.log(response.json());
+                } else {
+                    return 'Api is not a function';
+                }
+
+            }).catch(error => {
+                console.log('request failed', error);
+            });
     };
 
     render() {
