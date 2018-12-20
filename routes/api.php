@@ -26,6 +26,7 @@ Route::group(['middleware' => ['json.response']], function () {
     // private routes
     Route::middleware('auth:api')->group(function () {
         Route::get('/logout', 'Api\AuthController@logout')->name('logout');
+        Route::get('/all_user', 'Api\AuthController@all_users')->name('all_user.api');
     });
 
 });

@@ -51,6 +51,15 @@ class AuthController extends Controller
 
     }
 
+    public function all_users () {
+
+        $user = User::all();
+
+        $response = ['all_users' => $user];
+
+        return response($response, 200);
+    }
+
     public function logout (Request $request) {
 
         $token = $request->user()->token();
