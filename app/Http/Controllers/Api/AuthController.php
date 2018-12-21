@@ -13,10 +13,11 @@ class AuthController extends Controller
     public function register (Request $request) {
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string||min:6|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6||max:255|confirmed',
         ]);
+
 
         if ($validator->fails())
         {
@@ -37,7 +38,7 @@ class AuthController extends Controller
 
     public function login (Request $request) {
 
-        $user = User::where('email', $request->email)->first();
+        $user = User::where($request->all())->first();
 
         if ($user) {
 
