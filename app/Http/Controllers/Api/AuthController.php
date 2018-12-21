@@ -56,7 +56,7 @@ class AuthController extends Controller
                 $response = ['token' => $token,'user' => $user];
                 return response($response, 200);
             } else {
-                $response = "Password missmatch";
+                $response = "Password missing";
                 return response($response, 422);
             }
 
