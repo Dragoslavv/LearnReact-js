@@ -15,6 +15,10 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['json.response']], function () {
 
+    Route::fallback(function(){
+        return response()->json(['message' => 'Not Found!'], 404);
+    });
+
     Route::middleware('auth:api')->get('/user', function (Request $request) {
         return $request->user();
     });

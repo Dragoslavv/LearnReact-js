@@ -17,7 +17,9 @@ class ForceJsonResponse
      */
     public function handle(Request $request, Closure $next)
     {
-
+        if ( $request->is('api/*') ) {
+            $request->headers->set('Accept', 'application/json');
+        }
         return $next($request)
             ->header('Accept', 'application/json')
             ->header('Access-Control-Allow-Origin', '*')

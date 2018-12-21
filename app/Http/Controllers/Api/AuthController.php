@@ -26,13 +26,19 @@ class AuthController extends Controller
 
         $user = User::create($request->toArray());
 
+        if($user) {
+            $token = $user->createToken('Laravel Password Grant Client')->accessToken;
 
-        $token = $user->createToken('Laravel Password Grant Client')->accessToken;
-
-        $response = ['token' => $token ,'user' => $user];
+            $response = ['token' => $token, 'user' => $user];
 
 
-        return response($response, 200);
+            return response($response, 200);
+        } else {
+
+            $response = ['warning' => 'Nok'];
+            return response($response, 404);
+
+        }
 
     }
 
@@ -47,7 +53,8 @@ class AuthController extends Controller
             return response($response, 200);
 
         } else {
-            $response = 'User does not exist';
+
+            $response = ['warning' => 'Nok'];
             return response($response, 404);
         }
 
