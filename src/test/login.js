@@ -37,7 +37,12 @@ class Login extends Component {
             }).then(response => {
 
                 if(response.status >= 200 && response.status < 300){
-                    console.log(response.json());
+
+                    return response.json().then(value => {
+                            console.log(value['token'],value['user']);
+
+                    });
+
                 } else {
                     return 'Api is not a function';
                 }

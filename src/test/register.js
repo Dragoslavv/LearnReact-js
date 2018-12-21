@@ -30,6 +30,7 @@ class Register extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
+
         fetch('http://127.0.0.1:8000/api/register?name=' + this.state.name + '&email=' + this.state.email_register + '&password=' + this.state.password_register + '&password_confirmation=' + this.state.password_confirmation , {
             method: "POST",
             headers: {
@@ -38,7 +39,12 @@ class Register extends Component {
         }).then(response => {
 
             if(response.status >= 200 && response.status < 300){
-                console.log(response.json());
+
+                return response.json().then(value => {
+                    console.log(value['token'],value['user']);
+
+                });
+
             } else {
                 return 'Api is not a function';
             }
