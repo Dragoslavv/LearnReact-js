@@ -34,21 +34,27 @@ class Login extends Component {
                 headers: {
                     'Accept': 'application/json',
                 }
+
             }).then(response => {
 
                 if(response.status >= 200 && response.status < 300){
 
                     return response.json().then(value => {
+
                             console.log(value['token'],value['user']);
 
                     });
 
                 } else {
+
                     return 'Api is not a function';
+
                 }
 
             }).catch(error => {
+
                 console.log('request failed', error);
+
             });
     };
 
