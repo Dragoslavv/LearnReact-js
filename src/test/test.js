@@ -8,32 +8,51 @@ class Navigature extends React.Component {
         this.renderRedirectRegister = this.renderRedirectRegister.bind(this);
         this.closeFormRegister = this.closeFormRegister.bind(this);
 
+
     }
 
     renderRedirectRegister(){
         const registerScroll = document.getElementById('Register');
         const backRegisterButton = document.getElementById('backRegisterButton');
         const closeButtonRegister = document.getElementById('closeButtonRegister');
+        const closeButton = document.getElementById('closeButton');
+        const loginScroll = document.getElementById('Login');
+        const backLoginButton = document.getElementById('backLoginButton');
+
+
         registerScroll.classList.remove('hidden');
         backRegisterButton.classList.add('hidden');
         closeButtonRegister.classList.remove('hidden');
+        loginScroll.classList.add('hidden');
+        closeButton.classList.add('hidden');
+        backLoginButton.classList.remove('hidden');
+
     }
     closeFormRegister(){
         const registerScroll = document.getElementById('Register');
         const backRegisterButton = document.getElementById('backRegisterButton');
         const closeButtonRegister = document.getElementById('closeButtonRegister');
+
         registerScroll.classList.add('hidden');
         backRegisterButton.classList.remove('hidden');
         closeButtonRegister.classList.add('hidden');
     }
 
     renderRedirect() {
-        const loginScroll = document.getElementById('Register');
-        const backLoginButton = document.getElementById('backRegisterButton');
-        const closeButton = document.getElementById('closeButtonRegister');
+        const loginScroll = document.getElementById('Login');
+        const backLoginButton = document.getElementById('backLoginButton');
+        const closeButton = document.getElementById('closeButton');
+        const registerScroll = document.getElementById('Register');
+        const closeButtonRegister = document.getElementById('closeButtonRegister');
+        const backRegisterButton = document.getElementById('backRegisterButton');
+
+
         loginScroll.classList.remove('hidden');
         backLoginButton.classList.add('hidden');
         closeButton.classList.remove('hidden');
+        registerScroll.classList.add('hidden');
+        closeButtonRegister.classList.add('hidden');
+        backRegisterButton.classList.remove('hidden')
     }
 
     closeForm() {
@@ -50,7 +69,7 @@ class Navigature extends React.Component {
 
         var backLoginButton = 'backLoginButton',
             backRegisterButton = 'backRegisterButton',
-            closeButtonRegister     = 'closeButtonRegister',
+            closeButtonRegister = 'closeButtonRegister',
             closeButton     = 'closeButton';
 
 
