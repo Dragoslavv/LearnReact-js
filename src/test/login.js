@@ -37,7 +37,7 @@ class Login extends Component {
 
             }).then(response => {
 
-                if(response.status >= 200 && response.status < 300){
+                if(response.status >= 200 && response.status < 300 && response.status !== 404){
 
                     return response.json().then(value => {
 
