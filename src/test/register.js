@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Redirect } from 'react-router'
 import '../login.css';
 
 class Register extends Component {
@@ -9,7 +10,8 @@ class Register extends Component {
             name: '',
             email_register: '',
             password_register: '',
-            password_confirmation: ''
+            password_confirmation: '',
+            redirect: false
         };
 
         this.validateForm = this.validateForm.bind(this);
@@ -19,7 +21,7 @@ class Register extends Component {
     }
 
     validateForm() {
-        return this.state.name.length > 0 && this.state.name.value !== '' &&  this.state.email_register.length > 0 && this.state.email_register.value !== '' && this.state.password_register.value !== '' && this.state.password_register.length > 0 && this.state.password_confirmation.value !== '' && this.state.password_confirmation.length > 0;
+        return this.state.name.length > 0 && this.state.name.value !== '' &&  this.state.email_register.length > 0 && this.state.email_register.value !== '' && this.state.password_register.value !== '' && this.state.password_register.length > 0 && this.state.password_confirmation.value !== '' && this.state.password_confirmation.length > 0 ;
     }
 
     handleChange = e => {
@@ -42,7 +44,11 @@ class Register extends Component {
 
                 return response.json().then(value => {
 
-                    console.log(value['token'],value['user']);
+                    if(typeof value['token'] !== 'undefined'){
+
+                        window.location = "/admin";
+                        // console.log(value['token'],value['user']['email']);
+                    }
 
                 });
 

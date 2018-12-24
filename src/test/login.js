@@ -1,18 +1,24 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import '../login.css';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import Dashboard from './admin';
 
 class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            loggedIn: false,
+            user: null,
+            token: null
         };
 
         this.validateForm = this.validateForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.redirect = this.redirect.bind(this);
 
     }
 
@@ -25,6 +31,13 @@ class Login extends Component {
          [e.target.id]: e.target.value
       });
     };
+
+    redirect = ({ Dashboard }) => (
+        <Switch>
+            <Route path='/admin' component={Dashboard}/>
+            <Redirect to='/admin' />;
+        </Switch>
+    );
 
     handleSubmit = e => {
         e.preventDefault();
@@ -41,7 +54,15 @@ class Login extends Component {
 
                     return response.json().then(value => {
 
-                            console.log(value['token'],value['user']);
+                        if(typeof value['token'] !== 'undefined'){
+
+                            this.setState(() => ({
+                                loggedIn: true,
+                                token: value['token'],
+                                user: value['user']['email']
+                            }));
+
+                        }
 
                     });
 
@@ -58,11 +79,19 @@ class Login extends Component {
             });
     };
 
+
     render() {
+        const { loggedIn, user, token } = this.state;
+
+        if (loggedIn === true && user !== null && token !== null) {
+            console.log(loggedIn,user,token);
+            return this.redirect(loggedIn);
+        }
 
         var idCounter = 'Login';
 
         return (
+
             <section className="bg-primary section1 hidden" id={idCounter}>
                 <div className="Login">
                     <div className="container my-auto">

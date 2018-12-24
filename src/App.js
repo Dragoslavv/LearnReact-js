@@ -9,14 +9,20 @@ import Section3 from './test/section3';
 import Contact from './test/contact';
 import Login from "./test/login";
 import Register from "./test/register";
+import {BrowserRouter as Router} from "react-router-dom";
+
 
 
 class App extends Component {
   render() {
     return (
-        <div>
-            <Register/> <Login/> <Navigature/> <Projects/> <DuoNavigature/> <Section1/> <Section2/> <Section3/> <Contact/>
-        </div>
+        <Router>
+            <div>
+
+                <Register/> <Login/> <Navigature/> <Projects/> <DuoNavigature/> <Section1/> <Section2/> <Section3/> <Contact/>
+
+            </div>
+        </Router>
     );
   }
 }
