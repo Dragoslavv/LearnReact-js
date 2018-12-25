@@ -26,7 +26,7 @@ Route::group(['middleware' => ['json.response']], function () {
     // public routes
     Route::post('/login', 'Api\AuthController@login')->name('login.api');
     Route::post('/register', 'Api\AuthController@register')->name('register.api');
-    Route::get('/all_user', 'Api\AuthController@all_users')->name('all_user.api');
+    Route::post('/all_user', 'Api\AuthController@all_users')->name('all_user.api');
 
 
     // private routes
