@@ -72,7 +72,7 @@ class AuthController extends Controller
 
         $user = User::all();
 
-        $response = ['all_users' => $user];
+        $response = [ 'all_users' => $user ];
 
         return response($response, 200);
     }
@@ -82,7 +82,8 @@ class AuthController extends Controller
         $token = $request->user()->token();
         $token->revoke();
 
-        $response = 'You have been succesfully logged out!';
+        $response = [ 'logout' => 'You have been succesfully logged out!' ];
+
         return response($response, 200);
 
     }

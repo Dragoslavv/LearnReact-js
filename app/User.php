@@ -28,4 +28,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'remember_token',
     ];
+
+    public function product() {
+        return $this->belongsTo('App\Product');
+    }
 }
