@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('subject');
             $table->string('description');
-            $table->json('country');
-            $table->json('city');
+            $table->string('country');
+            $table->string('city');
             $table->timestamps();
         });
     }
