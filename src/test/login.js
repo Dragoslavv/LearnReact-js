@@ -19,7 +19,6 @@ class Login extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.redirect = this.redirect.bind(this);
-
     }
 
     validateForm() {
@@ -32,9 +31,9 @@ class Login extends Component {
       });
     };
 
-    redirect = ({ Dashboard }) => (
+    redirect = ({ loggedIn }) => (
         <Switch>
-            <Route path='/admin' component={Dashboard}/>
+            <Route path='/admin' component={loggedIn} render={()=>{return <Dashboard/>}}/>
             <Redirect to='/admin' />;
         </Switch>
     );
@@ -85,6 +84,7 @@ class Login extends Component {
 
         if (loggedIn === true && user !== null && token !== null) {
             console.log(loggedIn,user,token);
+
             return this.redirect(loggedIn);
         }
 

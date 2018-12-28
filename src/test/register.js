@@ -11,7 +11,9 @@ class Register extends Component {
             email_register: '',
             password_register: '',
             password_confirmation: '',
-            redirect: false
+            loggedIn: false,
+            user: null,
+            token: null
         };
 
         this.validateForm = this.validateForm.bind(this);
@@ -46,8 +48,11 @@ class Register extends Component {
 
                     if(typeof value['token'] !== 'undefined'){
 
-                        window.location = "/admin";
-                        // console.log(value['token'],value['user']['email']);
+                        this.setState(() => ({
+                            loggedIn: true,
+                            token: value['token'],
+                            user: value['user']['email']
+                        }));
                     }
 
                 });
